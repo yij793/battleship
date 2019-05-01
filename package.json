@@ -1,0 +1,18 @@
+{
+  "name": "battleship1",
+  "version": "1.0.0",
+  "description": "game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "yiyao jian",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}

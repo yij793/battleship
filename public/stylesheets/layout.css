@@ -1,0 +1,20 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+#playGround table {
+  position: relative;
+  width: 60%;
+  height: 500px;
+  margin: auto;
+}
+#playGround th {
+  border: 2px solid chartreuse;
+}
+#playGround td {
+  border: 2px solid chartreuse;
+}
+
+/*# sourceMappingURL=layout.css.map */

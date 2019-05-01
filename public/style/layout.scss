@@ -1,0 +1,22 @@
+body{
+    width:100vw;
+    height:100vh;
+    margin: 0;
+}
+#playGround{
+    
+    table{
+        position: relative;
+        width:60%;
+        height:500px;
+        margin: auto;
+    }
+   th{
+       border:2px solid chartreuse;
+       
+   }
+   td{
+        border:2px solid chartreuse;
+   }
+
+}
