@@ -10,16 +10,19 @@ function launchHit() {
             $(`tr:nth-child(${i}) td:nth-child(${j})`).attr('location', a[i - 1][j - 1])
             $(`tr:nth-child(${i}) td:nth-child(${j})`).attr('XY', `${i}${j}`)
             $(`tr:nth-child(${i}) td:nth-child(${j})`).click(function () {
-                $(this).attr('foo', true)
-            })
-        }
+                if ($(this).attr('foo') === 'true') {
 
+                } else {
+                    $(this).attr('foo', true)
+                }
+
+            })
+
+        }
     }
 
 }
-function hit() {
 
-}
 
 
 let a = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
