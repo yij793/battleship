@@ -11,10 +11,11 @@ body {
   margin: auto;
 }
 #playGround th {
-  border: 2px solid chartreuse;
+  border: 2px solid #0b2469;
 }
 #playGround td {
-  border: 2px solid chartreuse;
+  border: 2px solid #150e77;
+  text-align: center;
 }
 
 /*# sourceMappingURL=layout.css.map */
