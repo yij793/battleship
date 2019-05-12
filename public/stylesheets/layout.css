@@ -4,10 +4,22 @@ body {
   margin: 0;
 }
 
+#playGround {
+  display: flex;
+  flex-wrap: wrap;
+}
+#playGround #aiBoard {
+  flex: 1;
+  margin: 10px;
+}
+#playGround #userBoard {
+  flex: 1;
+  margin: 10px;
+}
 #playGround table {
   position: relative;
-  width: 60%;
-  height: 500px;
+  width: 30%;
+  height: 50% px;
   margin: auto;
 }
 #playGround th {
@@ -16,6 +28,8 @@ body {
 #playGround td {
   border: 2px solid #150e77;
   text-align: center;
+  width: 1em;
+  height: 3em;
 }
 
 /*# sourceMappingURL=layout.css.map */

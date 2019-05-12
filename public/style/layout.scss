@@ -4,11 +4,21 @@ body{
     margin: 0;
 }
 #playGround{
+    display: flex;
+    flex-wrap:wrap;
+    #aiBoard{
+        flex:1;
+        margin: 10px;
+    }
+    #userBoard{
+        flex:1;
+        margin: 10px;
+    }
     
     table{
         position: relative;
-        width:60%;
-        height:500px;
+        width:30%;
+        height:50%px;
         margin: auto;
     }
    th{
@@ -18,6 +28,8 @@ body{
    td{
         border:2px solid rgb(21, 14, 119);
         text-align: center;
+        width: 1em;
+        height:3em
    }
 
 }
