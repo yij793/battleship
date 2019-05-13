@@ -1,16 +1,26 @@
 $(document).ready(function () {
-
+    setUserBoar()
+    userPlaceShip(ships.Carrier,dir)
+    setShip(ships.Carrier,dir)
+    
 })
 
 
+let dir=true;
 
-let dir=true
 function setUserBoar(){
     for (let i = 1; i <= 10; i++) {
-        for (let j = 1; j <= 10; j++) {
+         for (let j = 1; j <= 10; j++) {
             $(`#userBoard tr:nth-child(${i}) td:nth-child(${j})`).attr('location', 0)}
 }}
+
+
 function setShip(ship,d){
+    $(document).keypress(e=>{
+        if(e.key==='l'){ 
+         d=!d
+        }
+    })
     $('#userBoard td').click(e=>{
         if(checkCollap(ship,d,e)){
             let a= Number(e.target.attributes.x.value)
@@ -35,26 +45,82 @@ function userPlaceShip(ship,d){
     $('#userBoard td').hover((e)=>{
         let a= Number(e.target.attributes.x.value)
         let b=Number(e.target.attributes.y.value)
-        if(d){
+        let placeColor;
+        if(checkCollap(ship,d,e)){
+            placeColor= 'green'
+         }else{
+            placeColor ='red'
+         }
+        $(document).keypress((evt)=>{
+            if(evt.key==='l'){
+             d=!d 
+             switch(d){
+                 case true:
+                 for(i=0;i<ship;i++){
+                    $(`#userBoard tr:nth-child(${a}) td:nth-child(${b+i})`).css('color','black')
+                    $(`#userBoard tr:nth-child(${a+i}) td:nth-child(${b})`).css('color',placeColor)
+                }
+                 break;
+                 case false:
+                 for(i=0;i<ship;i++){
+                    $(`#userBoard tr:nth-child(${a+i}) td:nth-child(${b})`).css('color','black')
+                    $(`#userBoard tr:nth-child(${a}) td:nth-child(${b+i})`).css('color',placeColor)
+                }
+                 break;
+             }
+            }
+    
+        })
+        if(checkCollap(ship,d,e)){
+            if(d){
             for(i=0;i<ship;i++){
-                $(`#userBoard tr:nth-child(${a+i}) td:nth-child(${b})`).css('color','red')
+                $(`#userBoard tr:nth-child(${a+i}) td:nth-child(${b})`).css('color','green')
             }
         }else{
             for(i=0;i<ship;i++){
-                $(`#userBoard tr:nth-child(${a}) td:nth-child(${b+i})`).css('color','red')
+                $(`#userBoard tr:nth-child(${a}) td:nth-child(${b+i})`).css('color','green')
+            }
+        }}else{
+            if(d){
+                for(i=0;i<ship;i++){
+                    $(`#userBoard tr:nth-child(${a+i}) td:nth-child(${b})`).css('color','red')
+                }
+            }else{
+                for(i=0;i<ship;i++){
+                    $(`#userBoard tr:nth-child(${a}) td:nth-child(${b+i})`).css('color','red')
+                }
             }
         }
+        
         
     },(e)=>{
         let a= Number(e.target.attributes.x.value)
         let b=Number(e.target.attributes.y.value)
+        $(document).keypress((evt)=>{
+            if(evt.key==='l'){ 
+             d=!d 
+             switch(d){
+                 case true:
+                 for(i=0;i<ship;i++){
+                    $(`#userBoard tr:nth-child(${a}) td:nth-child(${b+i})`).css('color','black')
+                }
+                 break;
+                 case false:
+                 for(i=0;i<ship;i++){
+                    $(`#userBoard tr:nth-child(${a+i}) td:nth-child(${b})`).css('color','black')
+                }
+                 break;
+             }
+            }
+    
+        })
         if(d){
             for(i=0;i<ship;i++){
                 $(`#userBoard tr:nth-child(${a+i}) td:nth-child(${b})`).css('color','black')
             }
         }else{
             for(i=0;i<ship;i++){
-                $(`#userBoard tr:nth-child(${a}) td:nth-child(${b+i})`).css('color','red')
+                $(`#userBoard tr:nth-child(${a}) td:nth-child(${b+i})`).css('color','black')
             }
         }
     })
